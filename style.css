@@ -1,0 +1,11 @@
+.buttons {
+  text-align: center;
+}
+
+.button_active {
+  background: yellow;
+}
+
+.center_text {
+  text-align: center;
+}

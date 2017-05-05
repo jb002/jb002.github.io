@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>MiniMap</title>
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+	<script type="text/javascript" src="../d3/d3.js"></script>
+	        <script type="text/javascript" src="utils/utils.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.js"></script>
+ <link rel="stylesheet" type="text/css" href="style.css">
+
+	<style type="text/css">
+
+
+
+		.axis path,
+		.axis line {
+			fill: none;
+			stroke: black;
+			shape-rendering: crispEdges;
+		}
+
+		.axis text {
+			font-family: sans-serif;
+			font-size: 11px;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<h2 class='center_text'>Map of New York City car accidents</h2>
+		<h3 class='center_text'>Accidents and injuries</h3>
+		<p class='center_text'> Each dot represents a car crash or collision and the red dots are the accidents where one or more involved parties were injured </p>
+
+		<div id='map'></div>
+		<div class='buttons' id ="buttons">
+    		<button class='button_active' id="button2" value=2> Fatigued/Drowsy </button>
+        	<button class='button' id="button3" value=3> Unsafe Speed </button>
+        	<button class='button' id="button4" value=4> Turning Improperly </button>
+        	<button class='button' id="button5" value=5> Traffic Control Disregarded </button>
+        	<button class='button' id="button6" value=6> Alcohol Involvement </button>
+    	</div>
+		<script type="text/javascript" src="injury_map.js"></script>
+
+		<h3 class='center_text'>Accidents and injuries</h3>
+		<p class='center_text'> This map shows you the different areas where this accident occurs. The size of the dot represents how spread out the accidents are where larger means spread over larger area. The opacity shows you how many accidents there are so the more transparent the dot is the less accidents is happening in this area. </p>
+		<div id='map2'></div>
+		<script type="text/javascript" src="minimal_map2.js"></script>
+	</div>
+	
+		</body>
+		</html>
