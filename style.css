@@ -6,6 +6,18 @@
   background: yellow;
 }
 
-.center_text {
+.c_buttons {
   text-align: center;
 }
+
+.c_button_active {
+  background: yellow;
+}
+
+.center_text {
+  text-align: center;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+
