@@ -27,9 +27,22 @@
 	</style>
 </head>
 
-<body>
+<body bgcolor="#e5f4f0">
+	<h1 class ='center_text'>Car crashes and collisions in New York City</h1>
+	<br>
+	<h2 class='center_text'>Intro</h2>
+	<p class='center_text'>What should be in this section: what is this project about, what can the reader get from reading it, the dataset, ... more? If you want to download the dataset it can be obtained on NYC Open Data's website through the following link
+	<br>
+	<br>			
+		<a href="https://data.cityofnewyork.us/api/views/h9gi-nx95/rows.csv?accessType=DOWNLOAD">
+			download dataset
+		</a>
+	<br>
+	<br>
+	lets get down to data!
+	</p>
 	<div>
-		<h2 class='center_text'>Map of New York City car accidents</h2>
+		<h2 class='center_text'>Map of accidents</h2>
 		<h3 class='center_text'>Accidents and injuries</h3>
 		<p class='center_text'> Each dot represents a car crash or collision and the red dots are the accidents where one or more involved parties were injured </p>
 
@@ -43,11 +56,27 @@
     	</div>
 		<script type="text/javascript" src="injury_map.js"></script>
 
-		<h3 class='center_text'>Accidents and injuries</h3>
-		<p class='center_text'> This map shows you the different areas where this accident occurs. The size of the dot represents how spread out the accidents are where larger means spread over larger area. The opacity shows you how many accidents there are so the more transparent the dot is the less accidents is happening in this area. </p>
+		<h3 class='center_text'>Key areas for accidents</h3>
+		<p class='center_text'> This map shows you the different areas where this accident occurs. The different areas have been found using the K-means algorithm. The size of the circle represents how spread out the accidents are, where larger cirlce means the accidents are more spread out. The opacity shows you how many accidents there are so the more transparent the circle is the less accidents is happening in this area. ...more explanation on this and how you can read maeanin from it</p>
 		<div id='map2'></div>
+		<div class='c_buttons' id ="c_buttons">
+    		<button class='c_button_active' id="c_button2" value=2> Fatigued/Drowsy </button>
+        	<button class='c_button' id="c_button3" value=3> Unsafe Speed </button>
+        	<button class='c_button' id="c_button4" value=4> Turning Improperly </button>
+        	<button class='c_button' id="c_button5" value=5> Traffic Control Disregarded </button>
+        	<button class='c_button' id="c_button6" value=6> Alcohol Involvement </button>
+    	</div>
 		<script type="text/javascript" src="minimal_map2.js"></script>
+
+		<h3 class='center_text'>A closer look at manhattan</h3>
+
 	</div>
+	<br>
+	<h2 class='center_text'>Next section ??</h2>
+	<br>
+	<br>
+	<br>
+	<br>
 	
 		</body>
 		</html>

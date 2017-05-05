@@ -15,8 +15,8 @@ var draw_data = data_fatigued;
 
 var points1;
 var points2;
-var selector = 0;
-var prev_selector = 2;
+var selector2 = 0;
+var prev_selector2 = 2;
 
 var url = "https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geojson"
 
@@ -36,6 +36,7 @@ d3.select("#buttons")
     document.getElementById('button'+selector).className = 'button_active';
     document.getElementById('button'+prev_selector).className = 'button';
     prev_selector = selector;  
+    console.log(selector)
     if(selector == 2){
       draw_data = data_fatigued;
     }
