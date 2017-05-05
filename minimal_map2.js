@@ -9,6 +9,12 @@ var centroids_traffic = "data/TCD_centroids.csv";
 var centroids_fatigued = "data/FD_centroids.csv";
 var draw_centroids = centroids_fatigued;
 
+var ti_size = 18958;
+var us_size = 2181;
+var ai_size = 6458;
+var fd_size = 38219;
+var tcd_size = 10074;
+var curr_size = fd_size;
 var path2 = d3.geoPath();
 var url2 = "https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geojson"
 var bor_names;
@@ -18,7 +24,6 @@ var projection2;
 var svg2 = d3.select("#map2").append("svg")
                          .attr("width", w2)
                          .attr("height", h2+padding2);
-
 
 
 
@@ -38,26 +43,29 @@ d3.select("#c_buttons")
     console.log('SECOND'+selector)  
     if(selector2 == 2){
       draw_centroids = centroids_fatigued;
+      curr_size = fd_size;
     }
     else if(selector2 == 3){
       draw_centroids = centroids_speeding;
+      curr_size = us_size;
     }
     else if(selector2 == 4){
       draw_centroids = centroids_turning;
+      curr_size =ti_size;
     }
     else if(selector2 == 5){
       draw_centroids = centroids_traffic;
+      curr_size = tcd_size;
     }
     else if(selector2 == 6){
       draw_centroids = centroids_alcohol;
+      curr_size = ai_size;
     }
     d3.json(url, function (json) {
       map2 = json
       updateMap2()
     });
 });
-
-
 
 var drawMap2 = function(){
   projection2 = d3.geoAlbersUsa()
@@ -89,12 +97,12 @@ var drawMap2 = function(){
                .attr("r", function(d) {
                   return d.average_distance*500;
                })
-               .style("fill", 'black')
+               .style("fill", '#e1361a')
                .style("opacity", function(d) {
-                  return d.size*0.0001;
+                  return d.size/curr_size*5;
                })
-               .attr("stroke", "rgba(0, 0, 0, 0.5)")
-               .attr("stroke-width", 0.5);
+               .attr("stroke", "rgba(0, 0, 0, 1)")
+               .attr("stroke-width", 1.5);
             
           });
   /*
@@ -140,12 +148,12 @@ var updateMap2 = function(){
                .attr("r", function(d) {
                   return d.average_distance*500;
                })
-               .style("fill", 'black')
+               .style("fill", '#e1361a')
                .style("opacity", function(d) {
-                  return d.size*0.0001;
+                  return d.size/curr_size*4;
                })
-               .attr("stroke", "rgba(0, 0, 0, 0.5)")
-               .attr("stroke-width", 0.5);
+               .attr("stroke", "rgba(0, 0, 0, 1)")
+               .attr("stroke-width", 1.5);
             
   });
 
