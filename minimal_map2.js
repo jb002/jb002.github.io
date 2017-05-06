@@ -137,9 +137,9 @@ var drawMap2 = function(){
                .data(data)
                .enter()
                .append("text")
-               .style('opacity', 0.5)
+               .style('opacity', 0.7)
                .style("text-anchor", "middle")
-               .style("font-size", "7px")
+               .style("font-size", "8px")
                .style("font-family", "Helvetica")
                 .attr("x", function(d) {
                     var longitude = d.loc[1];
@@ -151,7 +151,6 @@ var drawMap2 = function(){
             var latitude = d.loc[0];
             return projection([longitude, latitude])[1];
           })
-               //.attr("r", 30);
                .text(function(d) {
             return d.dist;
           });
