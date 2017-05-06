@@ -5,7 +5,7 @@ var h = 600;
 
 
 var path = d3.geoPath();
-
+var boroughs_names_data = 'data/borough_locs.json'
 var data_fatigued = "data/xy_injured_Fatigued_Drowsy.csv";
 var data_alcohol = "data/xy_injured_Alcohol Involvement.csv";
 var data_speeding = "data/xy_injured_Unsafe Speed.csv";
@@ -36,7 +36,6 @@ d3.select("#buttons")
     document.getElementById('button'+selector).className = 'button_active';
     document.getElementById('button'+prev_selector).className = 'button';
     prev_selector = selector;  
-    console.log(selector)
     if(selector == 2){
       draw_data = data_fatigued;
     }
@@ -98,7 +97,32 @@ var drawMap = function(){
                .attr("stroke-width", 0.5);
             
           });
-
+d3.json(boroughs_names_data, function(data) {
+            
+    svg.selectAll("text")
+               .data(data)
+               .enter()
+               .append("text")
+               .style('opacity', 0.5)
+               .style("text-anchor", "middle")
+               .style("font-size", "7px")
+               .style("font-family", "Helvetica")
+                .attr("x", function(d) {
+                    var longitude = d.loc[1];
+            var latitude = d.loc[0];
+            return projection([longitude, latitude])[0];
+          })
+          .attr("y", function(d) { 
+            var longitude = d.loc[1];
+            var latitude = d.loc[0];
+            return projection([longitude, latitude])[1];
+          })
+               //.attr("r", 30);
+               .text(function(d) {
+            return d.dist;
+          });
+            
+          });
 }
 
 var updateMap = function(){
