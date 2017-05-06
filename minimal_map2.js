@@ -105,9 +105,9 @@ var drawMap2 = function(){
                   return d.size/curr_size*5;
                })
                .attr("stroke", "rgba(0, 0, 0, 1)")
-               .attr("stroke-width", 1.5)
-               .append('title')
-               .text(function(d) { return 'hey'; });
+               .attr("stroke-width", 1.5);
+               //.append('title')
+               //.text(function(d) { return 'hey'; });
 
      $('svg circle').tipsy({ 
         gravity: 'w', 
