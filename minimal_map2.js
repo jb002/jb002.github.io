@@ -24,7 +24,7 @@ var projection2;
 var svg2 = d3.select("#map2").append("svg")
                          .attr("width", w2)
                          .attr("height", h2+padding2);
-
+var total = 0;
 
 
 d3.json(url2, function (json2) {
@@ -33,6 +33,9 @@ d3.json(url2, function (json2) {
 
 });
 
+
+
+
 d3.select("#c_buttons")
   .on("click", function() {
     var btn_val2 = d3.event.target
@@ -40,7 +43,7 @@ d3.select("#c_buttons")
     document.getElementById('c_button'+selector2).className = 'c_button_active';
     document.getElementById('c_button'+prev_selector2).className = 'c_button';
     prev_selector2 = selector2;
-    console.log('SECOND'+selector)  
+    //console.log('SECOND'+selector)  
     if(selector2 == 2){
       draw_centroids = centroids_fatigued;
       curr_size = fd_size;
@@ -84,7 +87,7 @@ var drawMap2 = function(){
 
   d3.csv(draw_centroids, function(data) {
             
-    svg2.selectAll("circle")
+    svg2.selectAll("circleK")
                .data(data)
                .enter()
                .append("circle")
@@ -102,34 +105,25 @@ var drawMap2 = function(){
                   return d.size/curr_size*5;
                })
                .attr("stroke", "rgba(0, 0, 0, 1)")
-               .attr("stroke-width", 1.5);
-            
-          });
-  /*
-  d3.json(boroughs_names_data, function(data) {
+               .attr("stroke-width", 1.5)
+               .append('title')
+               .text(function(d) { return 'hey'; });
 
-  bor_names = data;
-  console.log(bor_names)
-  svg2.selectAll(".dist_name")
-          .data(bor_names)
-          .enter()
-          .append("text")
-          .attr("cx", function(d) {
-            var longitude = d.loc[1];
-            var latitude = d.loc[0];
-            return projection([longitude, latitude])[1];
-          })
-          .attr("cy", function(d) { 
-            var longitude = d.loc[1];
-            var latitude = d.loc[0];
-            return projection([longitude, latitude])[0];
-          })
-          .attr("class", "dist_name")
-          .text(function(d) {
-            return d.dist;
+     $('svg circle').tipsy({ 
+        gravity: 'w', 
+        html: true, 
+        title: function() {
+          var d = this.__data__, c = 'blue';
+          if(d.size != null){
+            return 'Area:'+ '<br>'+ 'Total accidents: ' + d.size + '<br>' ;
+          }
+          else{
+            return 'Injured: '+ d.NUMBER_OF_PERSONS_INJURED ;
+          }
+           
+        }
+      });
           });
-});
-*/
 
 }
 

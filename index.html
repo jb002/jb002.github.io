@@ -5,9 +5,11 @@
 	<title>MiniMap</title>
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
 	<script type="text/javascript" src="../d3/d3.js"></script>
-	        <script type="text/javascript" src="utils/utils.js"></script>
+	        <script type="text/javascript" src="utils/utils.js"></script> 
+	        <script type="text/javascript" src="jquery.tipsy.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.js"></script>
- <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="tipsy.css" rel="stylesheet" type="text/css" />
+ 		<link rel="stylesheet" type="text/css" href="style.css">
 
 	<style type="text/css">
 
@@ -57,7 +59,9 @@
 		<script type="text/javascript" src="injury_map.js"></script>
 
 		<h3 class='center_text'>Key areas for accidents</h3>
-		<p class='center_text'> This map shows you the different areas where this accident occurs. The different areas have been found using the K-means algorithm. The size of the circle represents how spread out the accidents are, where larger cirlce means the accidents are more spread out. The opacity shows you how many accidents there are so the more transparent the circle is the less accidents is happening in this area. ...more explanation on this and how you can read maeanin from it</p>
+		<p class='center_text'> This map shows you the different areas where this accident occurs. The different areas have been found using the K-means algorithm. The size of the circle represents how spread out the accidents are, where larger cirlce means the accidents are more spread out. The opacity shows you how many accidents there are so the more transparent the circle is the less accidents is happening in this area. Hover over the cirlces to see the area it covers and how many accidents is happening in the area.
+
+		...more explanation on this and how you can read maeanin from it</p>
 		<div id='map2'></div>
 		<div class='c_buttons' id ="c_buttons">
     		<button class='c_button_active' id="c_button2" value=2> Fatigued/Drowsy </button>
