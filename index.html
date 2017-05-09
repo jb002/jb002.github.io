@@ -33,7 +33,8 @@
 	<h1 class ='center_text'>Car crashes and collisions in New York City</h1>
 	<br>
 	<h2 class='center_text'>Intro</h2>
-	<p class='center_text'>What should be in this section: what is this project about, what can the reader get from reading it, the dataset, ... more? If you want to download the dataset it can be obtained on NYC Open Data's website through the following link
+	<p class='center_text'>The purpose of this project is to investigate the vehicle crashes and collisions happening in New York City in the time period from July 1st 2012 to April 24th 2017. The main focus of this website is to show how time and place influences what type of crash is most likely to occur.
+In the dataset, there are many different types of crashes, but this website focuses on the five following types: Alcohol Involvement, Traffic Control Disregarded, Fatigued/Drowsy, Turning Improperly and Unsafe Speed. These were chosen as they seem to be the most interesting types to analyze. Below you can download the dataset and watch the video leading up to creating this project.
 	<br>
 	<br>			
 		<a href="https://data.cityofnewyork.us/api/views/h9gi-nx95/rows.csv?accessType=DOWNLOAD">
@@ -41,12 +42,16 @@
 		</a>
 	<br>
 	<br>
-	lets get down to data!
+	
+
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/WbB6ZJFtDfg" frameborder="0" allowfullscreen></iframe>
+	<br>
 	</p>
 	<div>
 		<h2 class='center_text'>Map of accidents</h2>
+		<p class='center_text'> The first part is all about the locations in which the accidents have happenden<p/>
 		<h3 class='center_text'>Accidents and injuries</h3>
-		<p class='center_text'> Each dot represents a car crash or collision and the red dots are the accidents where one or more involved parties were injured </p>
+		<p class='center_text'> In this first part the amount of crashes and collisions are visualized using a map, where each dot corresponds to a car crash or collision. Red dots represents accidents where one or more involved parties were injured and the yellow dots are accidents, where none of the involved parties were injured. You can use the buttons below to choose between the five different types of accidents to see which accidents are the most frequent and which are the most dangerous. </p>
 
 		<div id='map'></div>
 		<div class='buttons' id ="buttons">
@@ -59,9 +64,7 @@
 		<script type="text/javascript" src="injury_map.js"></script>
 
 		<h3 class='center_text'>Key areas for accidents</h3>
-		<p class='center_text'> This map shows you the different areas where this accident occurs. The different areas have been found using the K-means algorithm. The size of the circle represents how spread out the accidents are, where larger cirlce means the accidents are more spread out. The opacity shows you how many accidents there are so the more transparent the circle is the less accidents is happening in this area. Hover over the cirlces to see the area it covers and how many accidents is happening in the area.
-
-		...more explanation on this and how you can read maeanin from it</p>
+		<p class='center_text'> This map shows you the different areas where accident occurs. The different areas have been found using the K-means algorithm. The size of the circle represents how spread out the accidents are, where a larger cirlce means the accidents are more spread out. The opacity shows you how many accidents there are so the more transparent the circle is the less accidents is happening in this area. Hover over the cirlces to see how many accidents is happening in the area and how spread out they are.</p>
 		<div id='map2'></div>
 		<div class='c_buttons' id ="c_buttons">
     		<button class='c_button_active' id="c_button2" value=2> Fatigued/Drowsy </button>
@@ -72,7 +75,34 @@
     	</div>
 		<script type="text/javascript" src="minimal_map2.js"></script>
 
-		<h3 class='center_text'>A closer look at manhattan</h3>
+		<h3 class='center_text'>Some Linear Regressions</h3>
+		<p>
+			<img id="lin_reg" src='data/reg_images/linDrowsy.png' style="width:600px" align="middle">
+			<br>
+			<div class='c_buttons' id ="c_buttons">
+				<button onclick="document.getElementById('lin_reg').src='data/reg_images/linDrowsy.png'">Fatigued/Drowsy</button>
+				<button onclick="document.getElementById('lin_reg').src='data/reg_images/linUnsafe Speed.png'">Unsafe Speed</button>
+				<button onclick="document.getElementById('lin_reg').src='data/reg_images/linTurning Improperly.png'">Turning Improperly</button>
+				<button onclick="document.getElementById('lin_reg').src='data/reg_images/linTraffic Control Disregarded.png'">Traffic Control Disregarded</button>
+				<button onclick="document.getElementById('lin_reg').src='data/reg_images/linAlcohol Involvement.png'">Alcohol Involvement</button>
+			<div/>
+		</p>
+
+		<h3 class='center_text'>Some Multiple Regressions</h3>
+		<p>
+			<img id="mul_reg" src='data/reg_images/mulDrowsy.png' style="width:600px" align="middle">
+			<br>
+			<div class='c_buttons' id ="c_buttons">
+				<button onclick="document.getElementById('mul_reg').src='data/reg_images/mulDrowsy.png'">Fatigued/Drowsy</button>
+				<button onclick="document.getElementById('mul_reg').src='data/reg_images/mulUnsafe Speed.png'">Unsafe Speed</button>
+				<button onclick="document.getElementById('mul_reg').src='data/reg_images/mulTurning Improperly.png'">Turning Improperly</button>
+				<button onclick="document.getElementById('mul_reg').src='data/reg_images/mulTraffic Control Disregarded.png'">Traffic Control Disregarded</button>
+				<button onclick="document.getElementById('mul_reg').src='data/reg_images/mulAlcohol Involvement.png'">Alcohol Involvement</button>
+			<div/>
+		</p>
+
+		
+
 
 	</div>
 	<br>
