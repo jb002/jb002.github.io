@@ -6,4 +6,4 @@ https://jb002.github.io
 
 The explainer notebook can be found above in the file named 'NYC collisions.ipynb' or by following this link:
 
-http://nbviewer.jupyter.org/github/jb002/jb002.github.io/blob/master/NYC%20collisions.ipynb
+http://nbviewer.jupyter.org/github/jb002/jb002.github.io/blob/master/NYC%20collisions.ipynb?flush_cache=true
