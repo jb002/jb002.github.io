@@ -22,7 +22,6 @@ var bor_names;
 var selector = 0;
 var prev_selector = 2;
 var projection2;
-var avg_s = 0;
 var svg2 = d3.select("#map2").append("svg")
                          .attr("width", w2)
                          .attr("height", h2+padding2);
@@ -123,8 +122,7 @@ var drawMap2 = function(){
         title: function() {
           var d = this.__data__, c = 'blue';
           if(d.size != null){
-            avg_s = d.average_distance
-            return 'Total accidents in area: ' + d.size + '<br> <br>' +'Average distance between accidents: '+ avg_s;
+            return 'Total accidents in area: ' + d.size + '<br> <br>' +'Average distance between accidents: '+ d.average_distance;
           }
           else{
             return 'Injured: '+ d.NUMBER_OF_PERSONS_INJURED ;
@@ -200,7 +198,7 @@ $('svg circle').tipsy({
         title: function() {
           var d = this.__data__, c = 'blue';
           if(d.size != null){
-            return 'Total accidents in area: ' + d.size + '<br> <br>' +'Average distance between accidents: '+ avg_s;
+            return 'Total accidents in area: ' + d.size + '<br> <br>' +'Average distance between accidents: '+ d.average_distance;
           }
           else{
             return 'Injured: '+ d.NUMBER_OF_PERSONS_INJURED ;
