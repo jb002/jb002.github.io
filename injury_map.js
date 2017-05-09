@@ -18,8 +18,8 @@ var points2;
 var selector2 = 0;
 var prev_selector2 = 2;
 
-//var url = "https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geojson"
-var url = 'data/borough.geojson'
+var url = "https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geojson"
+//var url = 'data/borough.geojson'
 var svg = d3.select("#map").append("svg")
                          .attr("width", w)
                          .attr("height", h+padding);

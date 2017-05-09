@@ -16,8 +16,8 @@ var fd_size = 38219;
 var tcd_size = 10074;
 var curr_size = fd_size;
 var path2 = d3.geoPath();
-//var url2 = "https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geojson"
-var url2 = 'data/borough.geojson'
+var url2 = "https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geojson"
+//var url2 = 'data/borough.geojson'
 var bor_names;
 var selector = 0;
 var prev_selector = 2;
@@ -124,7 +124,7 @@ var drawMap2 = function(){
           var d = this.__data__, c = 'blue';
           if(d.size != null){
             avg_s = d.average_distance
-            return 'Total accidents in area: ' + d.size + '<br> <br>' +'Average distance between accidents: '+ avg_s ;
+            return 'Total accidents in area: ' + d.size + '<br> <br>' +'Average distance between accidents: '+ avg_s;
           }
           else{
             return 'Injured: '+ d.NUMBER_OF_PERSONS_INJURED ;
@@ -200,7 +200,7 @@ $('svg circle').tipsy({
         title: function() {
           var d = this.__data__, c = 'blue';
           if(d.size != null){
-            return 'Total accidents in area: ' + d.size + '<br> <br>' +'Average distance between accidents: '+ avg_s ;
+            return 'Total accidents in area: ' + d.size + '<br> <br>' +'Average distance between accidents: '+ avg_s;
           }
           else{
             return 'Injured: '+ d.NUMBER_OF_PERSONS_INJURED ;
