@@ -31,8 +31,8 @@
 
 <body bgcolor="#e5f4f0">
 	<h1 class ='center_text'>Car crashes and collisions in New York City</h1>
-	<br>
-	<h2 class='center_text'>Intro</h2>
+
+	<h2 class='center_text'>Welcome!</h2>
 	<p class='center_text'>The purpose of this project is to investigate the vehicle crashes and collisions happening in New York City in the time period from July 1st 2012 to April 24th 2017. The main focus of this website is to show how time and place influences what type of crash is most likely to occur.
 In the dataset, there are many different types of crashes, but this website focuses on the five following types: Alcohol Involvement, Traffic Control Disregarded, Fatigued/Drowsy, Turning Improperly and Unsafe Speed. These were chosen as they seem to be the most interesting types to analyze. Below you can download the dataset and watch the video leading up to creating this project.
 	<br>
@@ -49,7 +49,6 @@ In the dataset, there are many different types of crashes, but this website focu
 	</p>
 	<div>
 		<h2 class='center_text'>Map of accidents</h2>
-		<p class='center_text'> The first part is all about the locations in which the accidents have happenden<p/>
 		<h3 class='center_text'>Accidents and injuries</h3>
 		<p class='center_text'> In this first part the amount of crashes and collisions are visualized using a map, where each dot corresponds to a car crash or collision. Red dots represents accidents where one or more involved parties were injured and the yellow dots are accidents, where none of the involved parties were injured. You can use the buttons below to choose between the five different types of accidents to see which accidents are the most frequent and which are the most dangerous. </p>
 
@@ -74,8 +73,10 @@ In the dataset, there are many different types of crashes, but this website focu
         	<button class='c_button' id="c_button6" value=6> Alcohol Involvement </button>
     	</div>
 		<script type="text/javascript" src="minimal_map2.js"></script>
+		<h2 class='center_text'>Accidents at all hours of the day<h2>
+		<h3 class='center_text'>Accidents dependent on time</h3>
 
-		<h3 class='center_text'>Some Linear Regressions</h3>
+		<p class='center_text'> The second part is about how the amount of accidents is related to which hour of the day it is. In the first plots below, the number of accidents are shown as red dots and the blue line represents a linear regression, which shows the overall progress over time.  Use the buttons below to switch between the five different types of accidents to see, which are more likely to happen at different hours of the day.</p>
 		<p>
 			<img id="lin_reg" src='data/reg_images/linDrowsy.png' style="width:600px" align="middle">
 			<br>
@@ -88,7 +89,10 @@ In the dataset, there are many different types of crashes, but this website focu
 			<div/>
 		</p>
 
-		<h3 class='center_text'>Some Multiple Regressions</h3>
+		<h3 class='center_text'>Accidents dependent on time and other accidents</h3>
+
+		<p class='center_text'> In the 3D plots below, the number of accidents of one type is shown as a red dot. The blue plane represents a multiple linear regression, which takes both the hours of the day into account, but also the total amount of crashes regardless of the type.</p>
+
 		<p>
 			<img id="mul_reg" src='data/reg_images/mulDrowsy.png' style="width:600px" align="middle">
 			<br>
@@ -106,11 +110,11 @@ In the dataset, there are many different types of crashes, but this website focu
 
 	</div>
 	<br>
-	<h2 class='center_text'>Next section ??</h2>
 	<br>
 	<br>
 	<br>
 	<br>
+
 	
 		</body>
 		</html>
