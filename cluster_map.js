@@ -16,7 +16,8 @@ var fd_size = 38219;
 var tcd_size = 10074;
 var curr_size = fd_size;
 var path2 = d3.geoPath();
-var url2 = "https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geojson"
+//var url2 = "https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geojson"
+var url2 = 'data/borough.geojson'
 var bor_names;
 var selector = 0;
 var prev_selector = 2;
