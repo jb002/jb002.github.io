@@ -200,7 +200,7 @@ $('svg circle').tipsy({
         title: function() {
           var d = this.__data__, c = 'blue';
           if(d.size != null){
-            return 'Total accidents in area: ' + d.size + '<br>' ;
+            return 'Total accidents in area: ' + d.size + '<br> <br>' +'Average distance between accidents: '+ avg_s ;
           }
           else{
             return 'Injured: '+ d.NUMBER_OF_PERSONS_INJURED ;
